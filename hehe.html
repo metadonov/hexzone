@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>$hexzone</title> 
+   
+   
+  <style type="text/css">@font-face {font-family:Poppins;font-style:normal;font-weight:300;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/300/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:300;src:url(/cf-fonts/s/poppins/5.0.11/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:300;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/300/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/400/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/500/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin/600/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/600/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/600/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}</style> 
+  <style> 
+    body{
+      margin:0;
+      background-color:#000;
+      color:#fff;
+      font-family:'Courier New',monospace;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      height:100vh;
+      padding-top:2vh;
+      overflow-y:hidden;
+      overflow-x:hidden;
+      min-height:100vh;
+      width:100%;
+      position: relative;
+    }
+    
+    #wireframe-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    
+    .mainl{
+      white-space:pre;
+      text-align:center;
+      margin-bottom:10px;
+      width:100%;
+      font-size:.7em;
+      line-height:1.2;
+      transform:scale(1.1,1);
+      overflow-x:auto;
+      max-width:100%;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .links{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      padding:10px;
+      width:90%;
+      max-width:500px;
+      flex-wrap:wrap;
+      position: relative;
+      z-index: 1;
+    }
+    
+    @keyframes rotateGlow {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+    
+    .links a{
+      color:#fff;
+      text-decoration:none;
+      font-size:18px;
+      margin:10px 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 16px;
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:4px;
+      transition:all .3s ease;
+      min-width:140px;
+      background: transparent;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .links a::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        #60284A, 
+        #435177, 
+        #FFFFFF, 
+        #60284A
+      );
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease;
+      z-index: -2;
+      filter: blur(8px);
+    }
+    
+    .links a::after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      right: 1px;
+      bottom: 1px;
+      background: #000;
+      border-radius: 3px;
+      z-index: -1;
+    }
+    
+    .links a svg{
+      margin-right:10px;
+      width:24px;
+      height:24px;
+    }
+    
+    .links a:hover{
+      color:#fff;
+      transform:translateY(-2px);
+      border-color: rgba(255,255,255,0);
+    }
+    
+    .links a:hover::before {
+      opacity: 0.8;
+    }
+    
+    .links a:hover::before {
+      animation: rotateGlow 4s linear infinite;
+    }
+    
+    .line{
+      width:60%;
+      height:1px;
+      background:#333;
+      margin:15px 0;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .stats{
+      background-color:#000;
+      padding:5px;
+      width:90%;
+      max-width:800px;
+      margin:10px auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    #graph{
+      width:100%;
+      height:300px;
+    }
+    
+    .cte{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,.7);
+      backdrop-filter:blur(8px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+      cursor:pointer;
+      transition:opacity .5s ease;
+    }
+    
+    .cte-text{
+      font-family:'Poppins',sans-serif;
+      font-weight:500;
+      color:#fff;
+      font-size:24px;
+      text-align:center;
+      user-select:none;
+    }
+    
+    .fade-out{
+      opacity:0;
+      pointer-events:none;
+    }
+    
+    @media screen and (max-width:768px){
+      .mainl{
+        font-size:.5em;
+        transform:scale(1,1);
+      }
+      .links a{
+        font-size:16px;
+        padding:6px 12px;
+      }
+      #graph{
+        height:200px;
+      }
+    }
+    
+    @media screen and (max-width:480px){
+      .mainl{
+        font-size:.4em;
+      }
+      .cte-text{
+        font-size:18px;
+      }
+    }
+  </style> 
+  <script src="./$Femboy.cat_files/highcharts.js.download"></script>
+<link href="./$Femboy.cat_files/css" rel="stylesheet" type="text/css"></head> 
+<body> 
+  <canvas id="wireframe-bg" width="1920" height="953"></canvas>
+  
+  <div class="cte fade-out" id="cte" style="display: none;"> 
+    <div class="cte-text">Click to Enter</div> 
+  </div> 
+
+  <div class="mainl"> 
+    <pre>                                                                        
+@@@  @@@  @@@@@@@@  @@@  @@@  @@@@@@@@   @@@@@@   @@@  @@@  @@@@@@@@  
+@@@  @@@  @@@@@@@@  @@@  @@@  @@@@@@@@  @@@@@@@@  @@@@ @@@  @@@@@@@@  
+@@!  @@@  @@!       @@!  !@@       @@!  @@!  @@@  @@!@!@@@  @@!       
+!@!  @!@  !@!       !@!  @!!      !@!   !@!  @!@  !@!!@!@!  !@!       
+@!@!@!@!  @!!!:!     !@@!@!      @!!    @!@  !@!  @!@ !!@!  @!!!:!    
+!!!@!!!!  !!!!!:      @!!!      !!!     !@!  !!!  !@!  !!!  !!!!!:    
+!!:  !!!  !!:        !: :!!    !!:      !!:  !!!  !!:  !!!  !!:       
+:!:  !:!  :!:       :!:  !:!  :!:       :!:  !:!  :!:  !:!  :!:       
+::   :::   :: ::::   ::  :::   :: ::::  ::::: ::   ::   ::   :: ::::  
+ :   : :  : :: ::    :   ::   : :: : :   : :  :   ::    :   : :: ::   
+ hexzone.
+Since 2023
+</pre> 
+  </div> 
+  
+  <div class="links"> 
+    <a href="https://t.me/hexxzone" target="_blank"> 
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"> 
+        <path fill="#fff" d="M248 8a248 248 0 1 0 0 496 248 248 0 0 0 0-496m115 169c-4 39-20 134-28 178-4 19-10 25-17 25-14 2-25-9-39-18l-56-38c-24-16-8-24 6-39 3-4 67-61 68-67l-1-4-5-1q-4 1-105 70-15 10-27 9c-9 0-26-5-38-9-16-5-28-7-27-16q1-7 18-14l145-62c69-29 83-34 92-34 2 0 7 1 10 3a11 11 0 0 1 4 7 44 44 0 0 1 0 10"></path> 
+      </svg> Telegram: @hexxzone
+    </a> 
+  </div> 
+  
+  <script> 
+    document.getElementById('cte').addEventListener('click', function() { 
+      this.classList.add('fade-out'); 
+      const audio = document.getElementById('mainm'); 
+      audio.play(); 
+      setTimeout(() => { 
+        this.style.display = 'none'; 
+      }, 500); 
+    }); 
+    
+    Highcharts.createElement('link', { 
+      href: '//fonts.googleapis.com/css?family=Unica+One', 
+      rel: 'stylesheet', 
+      type: 'text/css' 
+    }, null, document.getElementsByTagName('head')[0]); 
+    
+    document.addEventListener('DOMContentLoaded', function() { 
+      const chart = Highcharts.chart('graph', { 
+        chart: { 
+          type: 'line', 
+          backgroundColor: '#000000', 
+          style: { 
+            fontFamily: 'Courier New, monospace' 
+          } 
+        }, 
+        credits: { 
+          enabled: false 
+        }, 
+        title: { 
+          text: 'DSTAT', 
+          style: { 
+            color: '#ffffff' 
+          } 
+        }, 
+        xAxis: { 
+          type: 'datetime', 
+          labels: { 
+            style: { 
+              color: '#ffffff' 
+            } 
+          }, 
+          lineColor: '#ffffff', 
+          tickColor: '#ffffff' 
+        }, 
+        yAxis: { 
+          labels: { 
+            style: { 
+              color: '#ffffff' 
+            } 
+          }, 
+          gridLineColor: '#333333', 
+          lineColor: '#ffffff', 
+          tickColor: '#ffffff', 
+          title: { 
+            text: 'Requests', 
+            style: { 
+              color: '#ffffff' 
+            } 
+          } 
+        }, 
+        series: [{ 
+          name: 'Total Requests', 
+          color: '#ffffff', 
+          data: [] 
+        }], 
+        legend: { 
+          enabled: false 
+        } 
+      }); 
+      
+      function updateData() { 
+        fetch('/rps?' + Date.now()) 
+          .then(response => response.json()) 
+          .then(data => { 
+            const x = Date.now(); 
+            const y = data.c; 
+            const series = chart.series[0]; 
+            series.addPoint([x, y], true, series.data.length > 30); 
+          }); 
+      } 
+      
+      setInterval(updateData, 1000); 
+    });
+    
+    (function() {
+      const canvas = document.getElementById('wireframe-bg');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let points = [];
+      const numPoints = 80;
+      const connectionDistance = 150;
+      const pointSize = 1;
+      
+      const colors = {
+        c1: '#60284A',
+        c2: '#435177',
+        c3: '#FFFFFF',
+      };
+      
+      function resizeCanvas() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+        initPoints();
+      }
+      
+      function initPoints() {
+        points = [];
+        for (let i = 0; i < numPoints; i++) {
+          const colorKeys = Object.keys(colors);
+          const colorKey = colorKeys[Math.floor(Math.random() * colorKeys.length)];
+          
+          points.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            color: colors[colorKey]
+          });
+        }
+      }
+      
+      function drawPoints() {
+        ctx.clearRect(0, 0, width, height);
+        
+        for (let i = 0; i < points.length; i++) {
+          const point = points[i];
+          
+          point.x += point.vx;
+          point.y += point.vy;
+          
+          if (point.x < 0 || point.x > width) point.vx *= -1;
+          if (point.y < 0 || point.y > height) point.vy *= -1;
+          
+          ctx.beginPath();
+          ctx.arc(point.x, point.y, pointSize, 0, Math.PI * 2);
+          ctx.fillStyle = point.color;
+          ctx.fill();
+          
+          for (let j = i + 1; j < points.length; j++) {
+            const otherPoint = points[j];
+            const dx = point.x - otherPoint.x;
+            const dy = point.y - otherPoint.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < connectionDistance) {
+              const gradient = ctx.createLinearGradient(
+                point.x, point.y, otherPoint.x, otherPoint.y
+              );
+              gradient.addColorStop(0, point.color);
+              gradient.addColorStop(1, otherPoint.color);
+              
+              ctx.beginPath();
+              ctx.moveTo(point.x, point.y);
+              ctx.lineTo(otherPoint.x, otherPoint.y);
+              ctx.strokeStyle = gradient;
+              ctx.lineWidth = 0.5 * (1 - distance / connectionDistance);
+              ctx.stroke();
+            }
+          }
+        }
+        
+        requestAnimationFrame(drawPoints);
+      }
+      
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+      drawPoints();
+    })();
+  </script> 
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'959060e2c89feff3',t:'MTc1MTQ4Mjc0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="./$Femboy.cat_files/saved_resource.html"></iframe> 
